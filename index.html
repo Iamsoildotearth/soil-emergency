@@ -1,353 +1,161 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Soil Emergency | Protecting Future Harvests</title>
-
-<meta name="description" content="Healthy soils underpin food security. Join the campaign calling for a UK Soil Health Strategy, national soil monitoring and measurable action to restore healthy soils and secure future harvests.">
-
-<style>
-
-body{
-    font-family: Georgia, serif;
-    line-height:1.7;
-    margin:0;
-    padding:0;
-    background:#f7f7f2;
-    color:#222;
-}
-
-header{
-    background:#304d30;
-    color:white;
-    padding:60px 20px;
-    text-align:center;
-}
-
-header h1{
-    margin:0;
-    font-size:3rem;
-}
-
-header p{
-    max-width:800px;
-    margin:20px auto;
-    font-size:1.2rem;
-}
-
-main{
-    max-width:1000px;
-    margin:auto;
-    padding:30px 20px;
-}
-
-section{
-    margin-bottom:50px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-
-label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
-}
-
-input, textarea, select{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    box-sizing:border-box;
-}
-
-textarea{
-    min-height:120px;
-}
-
-button{
-    background:#304d30;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    margin-top:20px;
-    margin-right:10px;
-    cursor:pointer;
-}
-
-button:hover{
-    opacity:0.9;
-}
-
-#letterPreview{
-    white-space:pre-wrap;
-    background:#fafafa;
-    padding:20px;
-    border:1px solid #ddd;
-    margin-top:20px;
-}
-
-footer{
-    background:#304d30;
-    color:white;
-    padding:30px;
-    text-align:center;
-}
-
-ul li{
-    margin-bottom:10px;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Emergency | Future Harvests</title>
+    <style>
+        :root {
+            --soil-green: #2e7d32;
+            --deep-green: #1b5e20;
+            --earth-brown: #5d4037;
+            --terracotta: #c44d2f;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: #333;
+            background: #f8f7f4;
+        }
+        header {
+            background: linear-gradient(135deg, var(--soil-green), var(--deep-green));
+            color: white;
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+        h1 { font-size: 2.6rem; margin: 0 0 12px 0; }
+        .subtitle { font-size: 1.35rem; opacity: 0.95; max-width: 700px; margin: 0 auto; }
+        .container { max-width: 920px; margin: 0 auto; padding: 30px 20px; }
+        .urgent {
+            background: #ffebee;
+            border-left: 6px solid var(--terracotta);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        button, .btn {
+            background: var(--soil-green);
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            font-size: 1.15rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 6px;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 220px;
+        }
+        button:hover, .btn:hover { background: var(--deep-green); }
+        .qr-section {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        .qr-section img {
+            max-width: 220px;
+            height: auto;
+            margin: 15px 0;
+        }
+        .social-buttons a {
+            display: inline-block;
+            margin: 8px 6px;
+            padding: 12px 24px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .sources {
+            background: #f1f0eb;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 50px 0;
+        }
+        footer {
+            background: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1.2rem; }
+            button, .btn { padding: 18px 30px; font-size: 1.1rem; min-width: 100%; margin: 8px 0; }
+        }
+    </style>
 </head>
-
 <body>
-
-<header>
-
-<h1>Soil Emergency</h1>
-
-<h2>Protecting Future Harvests</h2>
-
-<p>
-Healthy soils underpin food security. This campaign calls for urgent action to restore soil health,
-establish national monitoring and ensure long-term accountability for one of the UK's most important natural assets.
-</p>
-
-</header>
-
-<main>
-
-<section class="card">
-
-<h2>Send a Letter</h2>
-
-<p>
-Generate a personalised letter to Government ministers, opposition spokespeople,
-Green Party representatives and your local MP.
-</p>
-
-<label>Your Name</label>
-<input id="name">
-
-<label>Your Address</label>
-<textarea id="address"></textarea>
-
-<label>Recipient</label>
-<select id="recipient">
-<option>Government Ministers</option>
-<option>Conservative Shadow Team</option>
-<option>Green Party Representatives</option>
-<option>Local MP</option>
-<option>All Recipients</option>
-</select>
-
-<label>Optional Personal Message</label>
-<textarea id="personal"></textarea>
-
-<button onclick="generateLetter()">Generate Letter</button>
-
-<button onclick="copyLetter()">Copy Letter</button>
-
-<button onclick="openEmail()">Open Email</button>
-
-<div id="letterPreview"></div>
-
-</section>
-
-<section class="card">
-
-<h2>Why This Matters</h2>
-
-<p>
-Healthy soils support food production, biodiversity, water regulation and climate resilience.
-Without healthy soils, agricultural productivity and food security become increasingly vulnerable.
-</p>
-
-<p>
-The European Union has introduced a soil monitoring and resilience framework.
-Many citizens are now asking what equivalent action should be taken within the United Kingdom.
-</p>
-
-</section>
-
-<section class="card">
-
-<h2>Evidence and Sources</h2>
-
-<ul>
-
-<li>
-UK Government Environmental Improvement Plan
-</li>
-
-<li>
-EU Soil Monitoring and Resilience Directive
-</li>
-
-<li>
-FAO – Status of the World's Soil Resources
-</li>
-
-<li>
-British Society of Soil Science
-</li>
-
-<li>
-UK Centre for Ecology & Hydrology
-</li>
-
-</ul>
-
-<p>
-This campaign encourages evidence-based discussion and constructive engagement with policymakers.
-</p>
-
-</section>
-
-<section class="card">
-
-<h2>Questions We Are Asking</h2>
-
-<ol>
-
-<li>
-When will a statutory Soil Health Strategy be introduced with measurable targets?
-</li>
-
-<li>
-When will soil health be formally recognised as a strategic component of food security policy?
-</li>
-
-<li>
-When will an independent national soil survey establish an up-to-date baseline?
-</li>
-
-<li>
-When will national soil health targets be established?
-</li>
-
-<li>
-When will policy ambition be aligned with leading international soil restoration programmes?
-</li>
-
-<li>
-When will a cross-departmental Soil Emergency Working Group be established?
-</li>
-
-<li>
-When will a framework for measuring, independently verifying and publicly reporting progress be introduced?
-</li>
-
-</ol>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>
-Soil Emergency Campaign
-</p>
-
-<p>
-Healthy soils underpin food security.
-</p>
-
-</footer>
-
-<script>
-
-function buildLetter(){
-
-const name =
-document.getElementById('name').value || '[Your Name]';
-
-const address =
-document.getElementById('address').value || '[Your Address]';
-
-const personal =
-document.getElementById('personal').value;
-
-return `${address}
-
-${new Date().toLocaleDateString('en-GB')}
-
-Dear Representative,
-
-Re: The UK Soil Emergency — Urgent Action Needed
-
-I am writing to urge you to treat the degradation of UK and global soils as the emergency it is.
-
-Scientific evidence increasingly demonstrates that soil degradation threatens food security, biodiversity, water regulation, climate resilience and agricultural productivity.
-
-Healthy soils are fundamental to the resilience of our food production systems. Yet across the UK and globally, intensive cultivation, erosion, compaction and the loss of biological activity have degraded many agricultural soils.
-
-The European Union has recognised this challenge and responded with concrete policy through its soil monitoring and resilience framework.
-
-The UK has acknowledged the importance of soil health through various environmental and agricultural policies. However, there remains no equivalent statutory Soil Health Strategy with clear national targets, comprehensive monitoring and long-term accountability.
-
-Given the urgency of the situation and the UK's reliance on healthy soils for domestic food production, the public is entitled to understand not whether action will be taken, but when.
-
-I therefore ask:
-
-1. When will your party or organisation support the introduction of a statutory Soil Health Strategy with measurable targets for improving soil health across agricultural land?
-
-2. When will your party or organisation formally recognise soil health as a strategic component of UK food security policy?
-
-3. When will you support the commissioning of an independent national soil survey to establish an up-to-date baseline?
-
-4. When will your party or organisation support the establishment of national soil health targets and what evidence should be used to determine them?
-
-5. When will your party or organisation support aligning UK policy ambition with leading international soil restoration programmes?
-
-6. When will your party or organisation support the establishment of a cross-departmental Soil Emergency Working Group?
-
-7. When will a framework be established for measuring, independently verifying and publicly reporting progress on soil restoration?
-
-${personal ? "\nPersonal message:\n" + personal + "\n" : ""}
-
-I look forward to your response and to learning what timetable your party or organisation proposes for addressing this critical challenge.
-
-Yours sincerely,
-
-${name}
-
-${address}`;
-}
-
-function generateLetter(){
-document.getElementById('letterPreview').innerText = buildLetter();
-}
-
-function copyLetter(){
-navigator.clipboard.writeText(buildLetter());
-alert('Letter copied to clipboard');
-}
-
-function openEmail(){
-
-const subject =
-encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
-
-const body =
-encodeURIComponent(buildLetter());
-
-window.location.href =
-`mailto:?subject=${subject}&body=${body}`;
-
-}
-
-generateLetter();
-
-</script>
-
+    <header>
+        <h1>Soil Emergency</h1>
+        <p class="subtitle">Our food future is dying beneath our feet. We must act now to restore the living soil.</p>
+    </header>
+
+    <div class="container">
+        <div class="urgent">
+            <strong>⚠️ Britain is losing topsoil faster than it can be replaced.</strong><br>
+            This silent crisis threatens our food, wildlife, and climate. Come and talk to us at the Festival of Nature stall.
+        </div>
+
+        <div class="section">
+            <h2>The Crisis</h2>
+            <p>Industrial farming and chemical overuse have degraded our soils to a critical level. Healthy soil is the foundation of everything we eat.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Mission</h2>
+            <p>We are calling for urgent government action and widespread regenerative farming to rebuild Britain’s soil health.</p>
+        </div>
+
+        <div class="section" id="act">
+            <h2>Take Action Today</h2>
+            <p><strong>1.</strong> Sign the petition<br>
+               <strong>2.</strong> Write to your MP<br>
+               <strong>3.</strong> Support local regenerative farmers</p>
+            
+            <a href="mailto:your-email@example.com" class="btn">Email Us</a>
+            
+            <div class="social-buttons" style="margin-top:20px;">
+                <strong>Share:</strong><br>
+                <a href="https://twitter.com/intent/tweet?text=Soil%20Emergency%20-%20act%20now%20to%20save%20our%20soil" target="_blank">𝕏 / Twitter</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-site-url-here" target="_blank">Facebook</a>
+            </div>
+        </div>
+
+        <!-- QR Code Section - Replace the src when you have the image -->
+        <div class="qr-section">
+            <h2>📱 Scan to Visit Our Campaign Page</h2>
+            <p>Point your phone camera at the code below</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://iamsoildotearth.github.io/YOUR-REPO-NAME/" alt="QR Code for Soil Emergency">
+            <p><small>Or visit: <strong>https://iamsoildotearth.github.io/YOUR-REPO-NAME/</strong></small></p>
+        </div>
+
+        <div class="section">
+            <h2>Download Resources</h2>
+            <p><a href="YOUR-BRIEFING.pdf" class="btn" target="_blank">📄 Download our Soil Emergency Briefing (PDF)</a></p>
+        </div>
+
+        <div class="sources">
+            <h2>Sources &amp; Evidence</h2>
+            <ul>
+                <li>FAO United Nations Global Soil Status reports</li>
+                <li>UK DEFRA &amp; Environment Agency soil health data</li>
+                <li>IPCC Report on Climate Change and Land</li>
+                <li>Soil Association &amp; UK regenerative farming studies</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Soil Emergency Campaign • See you at the Festival of Nature in Bristol!</p>
+    </footer>
 </body>
 </html>
