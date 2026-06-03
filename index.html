@@ -41,9 +41,9 @@
             
             <div class="instructions">
                 <strong>Recommended order:</strong><br>
-                1. Fill in your details<br>
-                2. Send to Ministers first<br>
-                3. Then send to your own MP
+                1. Fill your details below<br>
+                2. Send to All Key Ministers first (in BCC)<br>
+                3. Then send to your own Local MP
             </div>
 
             <label>Your Name</label>
@@ -55,7 +55,7 @@
             <label>Optional Personal Message</label>
             <textarea id="personal" placeholder="Add any personal comment here..."></textarea>
 
-            <button onclick="openEmailMinisters()">📧 1. Send to All Key Ministers (BCC)</button>
+            <button onclick="openEmailMinisters()">📧 1. Send to All Key Ministers &amp; Spokespeople (BCC)</button>
             <button onclick="openEmailLocalMP()">📧 2. Send to My Local MP</button>
             <button onclick="copyLetter()">📋 Copy Letter</button>
 
@@ -79,7 +79,7 @@
 
 ${new Date().toLocaleDateString('en-GB')}
 
-Dear Secretary of State, Ministers and Shadow Ministers,
+Dear Secretary of State, Ministers, Shadow Ministers and Green Party Representatives,
 
 Re: The UK Soil Emergency — Urgent Action Needed
 
@@ -99,9 +99,9 @@ I therefore ask:
 2. When will soil health be formally recognised as a strategic component of UK food security policy?
 3. When will an independent national soil survey be commissioned?
 4. When will national soil health targets be established?
-5. When will UK policy align with leading international soil restoration programmes?
+5. When will UK policy ambition be aligned with leading international soil restoration programmes?
 6. When will a cross-departmental Soil Emergency Working Group be established?
-7. When will proper measuring and public reporting of progress begin?
+7. When will a framework for measuring, independently verifying and publicly reporting progress be introduced?
 
 ${personal ? "\nPersonal message:\n" + personal + "\n" : ""}
 
@@ -124,7 +124,10 @@ ${address}`;
         function openEmailMinisters(){
             const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
             const body = encodeURIComponent(buildLetter());
-            const bcc = "emma.reynolds.mp@parliament.uk;angela.eagle.mp@parliament.uk;mary.creagh.mp@parliament.uk;emma.hardy.mp@parliament.uk;victoria@victoriaatkins.org.uk";
+            
+            // Expanded BCC list including Baroness Hayman
+            const bcc = "emma.reynolds.mp@parliament.uk;angela.eagle.mp@parliament.uk;emma.hardy.mp@parliament.uk;mary.creagh.mp@parliament.uk;haymans@parliament.uk;victoria@victoriaatkins.org.uk;adrian.ramsay.mp@parliament.uk";
+            
             window.location.href = `mailto:?bcc=${bcc}&subject=${subject}&body=${body}`;
         }
 
