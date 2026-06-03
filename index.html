@@ -4,78 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soil Emergency | Protecting Future Harvests</title>
-    <meta name="description" content="Healthy soils underpin food security. Join the campaign calling for a UK Soil Health Strategy.">
     <style>
-        :root {
-            --soil-green: #304d30;
-            --deep-green: #1f331f;
-        }
-        body {
-            font-family: Georgia, serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background: #f7f7f2;
-            color: #222;
-        }
-        header {
-            background: linear-gradient(135deg, var(--soil-green), var(--deep-green));
-            color: white;
-            padding: 50px 20px 40px;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2.8rem; }
-        header h2 { margin: 10px 0 0 0; font-size: 1.6rem; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
-        .qr-section {
-            text-align: center;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 20px 0 30px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .qr-section img { max-width: 260px; height: auto; margin: 10px 0; }
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            margin-top: 6px;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-        textarea { min-height: 100px; }
-        button {
-            background: var(--soil-green);
-            color: white;
-            border: none;
-            padding: 14px 20px;
-            margin: 10px 6px 10px 0;
-            cursor: pointer;
-            font-size: 1.05rem;
-            border-radius: 6px;
-        }
-        button:hover { opacity: 0.9; }
-        #letterPreview {
-            white-space: pre-wrap;
-            background: #fafafa;
-            padding: 25px;
-            border: 1px solid #ddd;
-            margin-top: 20px;
-            font-size: 1.05rem;
-        }
-        .instructions {
-            background: #e8f5e9;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
+        :root { --soil-green: #304d30; --deep-green: #1f331f; }
+        body { font-family: Georgia, serif; line-height:1.7; margin:0; padding:0; background:#f7f7f2; color:#222; }
+        header { background: linear-gradient(135deg, var(--soil-green), var(--deep-green)); color:white; padding:50px 20px 40px; text-align:center; }
+        header h1 { margin:0; font-size:2.8rem; }
+        .container { max-width:1000px; margin:auto; padding:20px; }
+        .card { background:white; padding:25px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.08); margin-bottom:30px; }
+        .qr-section { text-align:center; background:white; padding:25px; border-radius:12px; margin:20px 0 30px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+        .qr-section img { max-width:260px; height:auto; }
+        input, textarea, select { width:100%; padding:12px; margin-top:6px; box-sizing:border-box; font-size:1rem; }
+        textarea { min-height:100px; }
+        button { background:var(--soil-green); color:white; border:none; padding:16px 20px; margin:12px 6px 12px 0; cursor:pointer; font-size:1.1rem; border-radius:6px; width:100%; max-width:100%; }
+        button:hover { opacity:0.9; }
+        #letterPreview { white-space:pre-wrap; background:#fafafa; padding:25px; border:1px solid #ddd; margin-top:20px; font-size:1.05rem; }
+        .instructions { background:#e8f5e9; padding:18px; border-radius:8px; margin:15px 0; font-size:1.05rem; }
     </style>
 </head>
 <body>
@@ -94,13 +37,13 @@
         </div>
 
         <section class="card">
-            <h2>Send Your Letter</h2>
+            <h2>Send Your Letter — Takes 1 Minute</h2>
             
             <div class="instructions">
-                <strong>How it works:</strong><br>
-                1. Fill in your details<br>
-                2. Click “Open Email App” or “Copy Letter”<br>
-                3. Send it to as many people as you want
+                <strong>Simple steps:</strong><br>
+                1. Enter your name and address<br>
+                2. Add a personal message (optional)<br>
+                3. Tap <strong>“Open Email App”</strong> → letter goes to key ministers
             </div>
 
             <label>Your Name</label>
@@ -109,33 +52,13 @@
             <label>Your Address</label>
             <textarea id="address" placeholder="Full postal address"></textarea>
 
-            <label>Send To</label>
-            <select id="recipient">
-                <option value="all">All Key Ministers & Policymakers (Recommended)</option>
-                <option value="Emma Reynolds">Emma Reynolds MP – Secretary of State</option>
-                <option value="Local MP">My Local MP only</option>
-            </select>
-
             <label>Optional Personal Message</label>
             <textarea id="personal" placeholder="Add any personal comment here..."></textarea>
 
-            <button onclick="generateLetter()">Generate Letter</button>
-            <button onclick="copyLetter()">📋 Copy Letter</button>
-            <button onclick="openEmail()">📧 Open Email App</button>
+            <button onclick="openEmailAll()">📧 Open Email App — Send to All Key Ministers</button>
+            <button onclick="copyLetter()">📋 Copy Letter (for manual sending)</button>
 
             <div id="letterPreview"></div>
-        </section>
-
-        <section class="card">
-            <h2>How to Send to Multiple People</h2>
-            <p><strong>Best method:</strong></p>
-            <ol>
-                <li>Click <strong>“Copy Letter”</strong></li>
-                <li>Open your email (Gmail / Outlook etc.)</li>
-                <li>Paste the letter</li>
-                <li>Add several email addresses in the “To” field</li>
-            </ol>
-            <p>You can find your local MP’s email at <a href="https://www.theyworkforyou.com/" target="_blank">TheyWorkForYou.com</a></p>
         </section>
 
     </div>
@@ -151,13 +74,11 @@
             const address = document.getElementById('address').value || '[Your Address]';
             const personal = document.getElementById('personal').value;
 
-            let salutation = "Dear Secretary of State, Ministers, Shadow Ministers and Green Party Representatives,";
-
             let letter = `${address}
 
 ${new Date().toLocaleDateString('en-GB')}
 
-${salutation}
+Dear Secretary of State, Ministers and Shadow Ministers,
 
 Re: The UK Soil Emergency — Urgent Action Needed
 
@@ -191,7 +112,7 @@ I therefore ask:
 
 ${personal ? "\nPersonal message:\n" + personal + "\n" : ""}
 
-I look forward to your response and to learning what timetable your party or organisation proposes for addressing this critical challenge.
+I look forward to your response.
 
 Yours sincerely,
 
@@ -208,13 +129,16 @@ ${address}`;
 
         function copyLetter(){
             navigator.clipboard.writeText(buildLetter());
-            alert('✅ Letter copied to clipboard!\n\nYou can now paste it and send to multiple people.');
+            alert('Letter copied! Paste into your email and add any extra addresses.');
         }
 
-        function openEmail(){
+        function openEmailAll(){
+            generateLetter();
             const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
             const body = encodeURIComponent(buildLetter());
-            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            // Public emails for key ministers
+            const ministers = "emma.reynolds.mp@parliament.uk;angela.eagle.mp@parliament.uk;victoria@victoriaatkins.org.uk";
+            window.location.href = `mailto:${ministers}?subject=${subject}&body=${body}`;
         }
 
         window.onload = generateLetter;
