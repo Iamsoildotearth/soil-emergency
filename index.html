@@ -42,7 +42,7 @@
             <div class="instructions">
                 <strong>Recommended order:</strong><br>
                 1. Fill your details below<br>
-                2. Send to All Key Ministers first (in BCC)<br>
+                2. Send to All Key Ministers first (BCC)<br>
                 3. Then send to your own Local MP
             </div>
 
@@ -125,8 +125,8 @@ ${address}`;
             const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
             const body = encodeURIComponent(buildLetter());
             
-            // Expanded BCC list including Baroness Hayman
-            const bcc = "emma.reynolds.mp@parliament.uk;angela.eagle.mp@parliament.uk;emma.hardy.mp@parliament.uk;mary.creagh.mp@parliament.uk;haymans@parliament.uk;victoria@victoriaatkins.org.uk;adrian.ramsay.mp@parliament.uk";
+            // Emails separated by comma + space as requested
+            const bcc = "emma.reynolds.mp@parliament.uk, angela.eagle.mp@parliament.uk, emma.hardy.mp@parliament.uk, mary.creagh.mp@parliament.uk, haymans@parliament.uk, victoria@victoriaatkins.org.uk, adrian.ramsay.mp@parliament.uk";
             
             window.location.href = `mailto:?bcc=${bcc}&subject=${subject}&body=${body}`;
         }
