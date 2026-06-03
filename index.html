@@ -15,10 +15,10 @@
         .qr-section img { max-width:260px; height:auto; }
         input, textarea, select { width:100%; padding:12px; margin-top:6px; box-sizing:border-box; font-size:1rem; }
         textarea { min-height:100px; }
-        button { background:var(--soil-green); color:white; border:none; padding:16px 20px; margin:12px 6px 12px 0; cursor:pointer; font-size:1.1rem; border-radius:6px; width:100%; max-width:100%; }
+        button { background:var(--soil-green); color:white; border:none; padding:16px 20px; margin:12px 0; cursor:pointer; font-size:1.1rem; border-radius:6px; width:100%; }
         button:hover { opacity:0.9; }
         #letterPreview { white-space:pre-wrap; background:#fafafa; padding:25px; border:1px solid #ddd; margin-top:20px; font-size:1.05rem; }
-        .instructions { background:#e8f5e9; padding:18px; border-radius:8px; margin:15px 0; font-size:1.05rem; }
+        .instructions { background:#e8f5e9; padding:18px; border-radius:8px; margin:15px 0; }
     </style>
 </head>
 <body>
@@ -37,13 +37,13 @@
         </div>
 
         <section class="card">
-            <h2>Send Your Letter — Takes 1 Minute</h2>
+            <h2>Send Your Letter — Takes Under 1 Minute</h2>
             
             <div class="instructions">
-                <strong>Simple steps:</strong><br>
-                1. Enter your name and address<br>
-                2. Add a personal message (optional)<br>
-                3. Tap <strong>“Open Email App”</strong> → letter goes to key ministers
+                <strong>Recommended order:</strong><br>
+                1. Fill in your details<br>
+                2. Send to Ministers first<br>
+                3. Then send to your own MP
             </div>
 
             <label>Your Name</label>
@@ -55,8 +55,9 @@
             <label>Optional Personal Message</label>
             <textarea id="personal" placeholder="Add any personal comment here..."></textarea>
 
-            <button onclick="openEmailAll()">📧 Open Email App — Send to All Key Ministers</button>
-            <button onclick="copyLetter()">📋 Copy Letter (for manual sending)</button>
+            <button onclick="openEmailMinisters()">📧 1. Send to All Key Ministers (BCC)</button>
+            <button onclick="openEmailLocalMP()">📧 2. Send to My Local MP</button>
+            <button onclick="copyLetter()">📋 Copy Letter</button>
 
             <div id="letterPreview"></div>
         </section>
@@ -92,23 +93,15 @@ The European Union has recognised this challenge and responded with concrete pol
 
 The UK has acknowledged the importance of soil health through various environmental and agricultural policies. However, there remains no equivalent statutory Soil Health Strategy with clear national targets, comprehensive monitoring and long-term accountability.
 
-Given the urgency of the situation and the UK's reliance on healthy soils for domestic food production, the public is entitled to understand not whether action will be taken, but when.
-
 I therefore ask:
 
-1. When will your party or organisation support the introduction of a statutory Soil Health Strategy with measurable targets for improving soil health across agricultural land?
-
-2. When will your party or organisation formally recognise soil health as a strategic component of UK food security policy?
-
-3. When will you support the commissioning of an independent national soil survey to establish an up-to-date baseline?
-
-4. When will your party or organisation support the establishment of national soil health targets and what evidence should be used to determine them?
-
-5. When will your party or organisation support aligning UK policy ambition with leading international soil restoration programmes?
-
-6. When will your party or organisation support the establishment of a cross-departmental Soil Emergency Working Group?
-
-7. When will a framework be established for measuring, independently verifying and publicly reporting progress on soil restoration?
+1. When will a statutory Soil Health Strategy with measurable targets be introduced?
+2. When will soil health be formally recognised as a strategic component of UK food security policy?
+3. When will an independent national soil survey be commissioned?
+4. When will national soil health targets be established?
+5. When will UK policy align with leading international soil restoration programmes?
+6. When will a cross-departmental Soil Emergency Working Group be established?
+7. When will proper measuring and public reporting of progress begin?
 
 ${personal ? "\nPersonal message:\n" + personal + "\n" : ""}
 
@@ -123,25 +116,27 @@ ${address}`;
             return letter;
         }
 
-        function generateLetter(){
-            document.getElementById('letterPreview').innerText = buildLetter();
-        }
-
         function copyLetter(){
             navigator.clipboard.writeText(buildLetter());
-            alert('Letter copied! Paste into your email and add any extra addresses.');
+            alert('✅ Letter copied to clipboard!');
         }
 
-        function openEmailAll(){
-            generateLetter();
+        function openEmailMinisters(){
             const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
             const body = encodeURIComponent(buildLetter());
-            // Public emails for key ministers
-            const ministers = "emma.reynolds.mp@parliament.uk;angela.eagle.mp@parliament.uk;victoria@victoriaatkins.org.uk";
-            window.location.href = `mailto:${ministers}?subject=${subject}&body=${body}`;
+            const bcc = "emma.reynolds.mp@parliament.uk;angela.eagle.mp@parliament.uk;mary.creagh.mp@parliament.uk;emma.hardy.mp@parliament.uk;victoria@victoriaatkins.org.uk";
+            window.location.href = `mailto:?bcc=${bcc}&subject=${subject}&body=${body}`;
         }
 
-        window.onload = generateLetter;
+        function openEmailLocalMP(){
+            const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
+            const body = encodeURIComponent(buildLetter());
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        window.onload = function() {
+            document.getElementById('letterPreview').innerText = buildLetter();
+        };
     </script>
 </body>
 </html>
