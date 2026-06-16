@@ -41,9 +41,9 @@
             
             <div class="instructions">
                 <strong>Recommended order:</strong><br>
-                1. Fill your details below<br>
-                2. Send to All Key Ministers first (BCC)<br>
-                3. Then send to your own Local MP
+                1. Fill your details<br>
+                2. Send to Ministers &amp; Spokespeople (BCC)<br>
+                3. Send separately to your Local MP
             </div>
 
             <label>Your Name</label>
@@ -55,11 +55,17 @@
             <label>Optional Personal Message</label>
             <textarea id="personal" placeholder="Add any personal comment here..."></textarea>
 
-            <button onclick="openEmailMinisters()">📧 1. Send to All Key Ministers &amp; Spokespeople (BCC)</button>
+            <button onclick="openEmailMinisters()">📧 1. Send to Key Ministers &amp; Spokespeople (BCC)</button>
             <button onclick="openEmailLocalMP()">📧 2. Send to My Local MP</button>
             <button onclick="copyLetter()">📋 Copy Letter</button>
 
             <div id="letterPreview"></div>
+        </section>
+
+        <section class="card">
+            <h2>Note</h2>
+            <p><strong>Emma Reynolds MP</strong> (Secretary of State) prefers messages via the official Defra webform: 
+            <a href="https://www.gov.uk/guidance/contact-defra" target="_blank">https://www.gov.uk/guidance/contact-defra</a></p>
         </section>
 
     </div>
@@ -125,8 +131,8 @@ ${address}`;
             const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
             const body = encodeURIComponent(buildLetter());
             
-            // Emails separated by comma + space as requested
-            const bcc = "emma.reynolds.mp@parliament.uk, angela.eagle.mp@parliament.uk, emma.hardy.mp@parliament.uk, mary.creagh.mp@parliament.uk, haymans@parliament.uk, victoria@victoriaatkins.org.uk, adrian.ramsay.mp@parliament.uk";
+            // Updated BCC list with comma + space
+            const bcc = "angela.eagle.mp@parliament.uk, emma.hardy.mp@parliament.uk, mary.creagh.mp@parliament.uk, ps.baroness.hayman@defra.gov.uk, victoria@victoriaatkins.org.uk, adrian.ramsay.mp@parliament.uk";
             
             window.location.href = `mailto:?bcc=${bcc}&subject=${subject}&body=${body}`;
         }
