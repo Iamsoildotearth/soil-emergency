@@ -1,151 +1,136 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soil Emergency | Protecting Future Harvests</title>
+    <title>UK Soil Emergency – Official Letter</title>
     <style>
-        :root { --soil-green: #304d30; --deep-green: #1f331f; }
-        body { font-family: Georgia, serif; line-height:1.7; margin:0; padding:0; background:#f7f7f2; color:#222; }
-        header { background: linear-gradient(135deg, var(--soil-green), var(--deep-green)); color:white; padding:50px 20px 40px; text-align:center; }
-        header h1 { margin:0; font-size:2.8rem; }
-        .container { max-width:1000px; margin:auto; padding:20px; }
-        .card { background:white; padding:25px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.08); margin-bottom:30px; }
-        .qr-section { text-align:center; background:white; padding:25px; border-radius:12px; margin:20px 0 30px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-        .qr-section img { max-width:260px; height:auto; }
-        input, textarea, select { width:100%; padding:12px; margin-top:6px; box-sizing:border-box; font-size:1rem; }
-        textarea { min-height:100px; }
-        button { background:var(--soil-green); color:white; border:none; padding:16px 20px; margin:12px 0; cursor:pointer; font-size:1.1rem; border-radius:6px; width:100%; }
-        button:hover { opacity:0.9; }
-        #letterPreview { white-space:pre-wrap; background:#fafafa; padding:25px; border:1px solid #ddd; margin-top:20px; font-size:1.05rem; }
-        .instructions { background:#e8f5e9; padding:18px; border-radius:8px; margin:15px 0; }
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            line-height: 1.7; 
+            max-width: 850px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            color: #222; 
+            background: #f9f9f9;
+        }
+        .letter { 
+            background: white; 
+            padding: 50px; 
+            border: 1px solid #ddd; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #1a5f1a; 
+            text-align: center; 
+            border-bottom: 2px solid #1a5f1a; 
+            padding-bottom: 15px;
+        }
+        .header { 
+            margin-bottom: 30px; 
+            line-height: 1.5;
+        }
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin: 20px 0; 
+        }
+        th, td { 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            text-align: left; 
+        }
+        th { 
+            background: #f0f0f0; 
+        }
+        .callout { 
+            background: #f8f1e3; 
+            padding: 20px; 
+            border-left: 6px solid #1a5f1a; 
+            margin: 25px 0; 
+        }
+        footer { 
+            margin-top: 60px; 
+            text-align: center; 
+            font-size: 0.9em; 
+            color: #555; 
+        }
+        a { color: #1a5f1a; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Soil Emergency</h1>
-        <h2>Protecting Future Harvests</h2>
-    </header>
+    <div class="letter">
 
-    <div class="container">
-
-        <div class="qr-section">
-            <h2>📱 Scan to open this page</h2>
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://iamsoildotearth.github.io/soil-emergency/" alt="QR Code">
-            <p><small>https://iamsoildotearth.github.io/soil-emergency/</small></p>
+        <div class="header">
+            <p><strong>[Your Full Name]<br>
+            [Your Full Postal Address]<br>
+            [Postcode]<br>
+            [Email Address]<br>
+            16 June 2026</strong></p>
         </div>
 
-        <section class="card">
-            <h2>Send Your Letter — Takes Under 1 Minute</h2>
-            
-            <div class="instructions">
-                <strong>Recommended order:</strong><br>
-                1. Fill your details<br>
-                2. Send to Ministers &amp; Spokespeople (BCC)<br>
-                3. Send separately to your Local MP
-            </div>
+        <h1>UK Soil Emergency — Urgent Need for Stronger Action Beyond Current Targets</h1>
 
-            <label>Your Name</label>
-            <input id="name" placeholder="Your full name">
+        <p><strong>Dear Secretary of State / Minister / [Specific Name, e.g. Chair of the EFRA Committee],</strong></p>
 
-            <label>Your Address</label>
-            <textarea id="address" placeholder="Full postal address"></textarea>
+        <p>I am writing as a concerned [constituent / citizen] to urge you to treat soil degradation as the national emergency it truly is. Healthy soils are the foundation of food security, biodiversity, water regulation, climate resilience, <strong>human nutrition</strong>, and long-term agricultural productivity. Their continued decline poses profound risks to the UK’s economy, environment, public health, and national security.</p>
 
-            <label>Optional Personal Message</label>
-            <textarea id="personal" placeholder="Add any personal comment here..."></textarea>
+        <p>The Government has taken some positive steps. The <strong>Environmental Improvement Plan 2025</strong> commits to bringing at least <strong>40%</strong> of England’s agricultural soil into sustainable management by 2028, rising to <strong>60% by 2030</strong>. It also includes publication of an initial soil health statistic in 2026, a fuller baseline by 2029, and principles for sustainable soil management. The <strong>Sustainable Farming Incentive (SFI) 2026</strong> offers voluntary payments for actions such as cover crops, herbal leys, and no-till farming. The <strong>JNCC Indicators of Soil Health (2026)</strong> provide an early modelled assessment, with arable soils currently scoring around 61.9% in supporting sustainable productivity.</p>
 
-            <button onclick="openEmailMinisters()">📧 1. Send to Key Ministers &amp; Spokespeople (BCC)</button>
-            <button onclick="openEmailLocalMP()">📧 2. Send to My Local MP</button>
-            <button onclick="copyLetter()">📋 Copy Letter</button>
+        <p><strong>However, these measures are widely regarded as insufficient</strong> to reverse ongoing soil degradation or prevent a full soil health crisis. The targets are modest, non-statutory, and heavily reliant on voluntary uptake. Key gaps remain: there is still no dedicated statutory Soil Health Strategy with binding targets, no comprehensive independent national soil survey, and limited mandatory standards. Some practical soil assessment actions have even been removed from SFI 2026.</p>
 
-            <div id="letterPreview"></div>
-        </section>
+        <div class="callout">
+            <p><strong>Without far stronger and faster intervention, the consequences will be severe:</strong></p>
+        </div>
 
-        <section class="card">
-            <h2>Note</h2>
-            <p><strong>Emma Reynolds MP</strong> (Secretary of State) prefers messages via the official Defra webform: 
-            <a href="https://www.gov.uk/guidance/contact-defra" target="_blank">https://www.gov.uk/guidance/contact-defra</a></p>
-        </section>
+        <ul>
+            <li><strong>Declining nutritional quality of food</strong>: Soils low in organic matter and microbial life produce crops with significantly reduced levels of essential vitamins, minerals, and phytonutrients. Analysis of the UK government’s own official data — <em>McCance and Widdowson’s The Composition of Foods</em> — reveals dramatic declines between 1940 and 2002:</li>
+        </ul>
+
+        <table>
+            <tr><th>Food Item</th><th>Nutrient</th><th>Loss</th><th>What This Means</th></tr>
+            <tr><td>Carrots</td><td>Magnesium</td><td>75%</td><td>You would need to eat roughly four modern carrots to obtain the magnesium in one carrot from 1940.</td></tr>
+            <tr><td>Spinach</td><td>Iron</td><td>60%</td><td>Striking loss of one of spinach’s most celebrated nutrients.</td></tr>
+            <tr><td>Apples / Oranges</td><td>Iron</td><td>~67%</td><td>You would need to eat three modern apples or oranges to get the same iron one provided in 1940.</td></tr>
+            <tr><td>Rump Steak</td><td>Iron</td><td>55%</td><td>Average iron levels dropped by 47% across 15 different meat items.</td></tr>
+            <tr><td>Milk &amp; Dairy</td><td>Magnesium</td><td>21%</td><td>The iron content of milk dropped by over 60%.</td></tr>
+        </table>
+
+        <p>Food today simply does not deliver the same nutritional value as in previous generations. This is contributing to poorer public health outcomes and risks long-term decline in the nation’s health and resilience.</p>
+
+        <ul>
+            <li>Increased <strong>food insecurity</strong> and higher food prices due to declining yields and greater reliance on volatile imports.</li>
+            <li>Heightened <strong>flood risk</strong> and water quality problems from poorer water infiltration and increased runoff.</li>
+            <li>Accelerated <strong>biodiversity loss</strong> and reduced carbon storage, undermining climate goals.</li>
+            <li>Long-term damage to agricultural productivity and rural economies, with potential multi-billion-pound costs to the UK.</li>
+        </ul>
+
+        <p>I therefore respectfully urge you to go significantly further and ask:</p>
+
+        <ol>
+            <li>When will a <strong>statutory Soil Health Strategy</strong> with legally binding, science-based national targets be introduced?</li>
+            <li>When will soil health be formally recognised as a <strong>strategic pillar of UK food security and public health policy</strong>?</li>
+            <li>When will a <strong>comprehensive independent national soil survey</strong> be commissioned to establish a robust baseline?</li>
+            <li>How will the Government strengthen ambition beyond the current 40%/60% targets to achieve widespread soil restoration by 2030?</li>
+            <li>When will a <strong>cross-departmental Soil Emergency Working Group</strong> be established to coordinate urgent action?</li>
+            <li>What steps will be taken to move from voluntary incentives to a stronger mix of regulation, investment, and accountability?</li>
+            <li>When will a robust framework for <strong>independent verification and public reporting</strong> on soil health progress be fully implemented?</li>
+        </ol>
+
+        <p>I have attached/linked the full <strong>Soil Emergency statement</strong> for your reference: <strong>https://iamsoildotearth.github.io/soil-emergency/</strong></p>
+
+        <p>I would be grateful for a detailed response on these points and any additional actions you plan to take or support. Soil health is too critical to be addressed with incremental measures alone.</p>
+
+        <p><strong>Yours sincerely,</strong></p>
+        <p>[Your Full Name]</p>
 
     </div>
 
     <footer>
-        <p>Soil Emergency Campaign • Festival of Nature, Bristol</p>
-        <p><a href="mailto:cheryl@iamtheuniverse" style="color:white;">Contact Us: cheryl@iamtheuniverse</a></p>
+        <p>UK Soil Emergency Campaign • June 2026</p>
+        <p><a href="https://iamsoildotearth.github.io/soil-emergency/">View the full Soil Emergency Statement</a></p>
     </footer>
 
-    <script>
-        function buildLetter(){
-            const name = document.getElementById('name').value || '[Your Name]';
-            const address = document.getElementById('address').value || '[Your Address]';
-            const personal = document.getElementById('personal').value;
-
-            let letter = `${address}
-
-${new Date().toLocaleDateString('en-GB')}
-
-Dear Secretary of State, Ministers, Shadow Ministers and Green Party Representatives,
-
-Re: The UK Soil Emergency — Urgent Action Needed
-
-I am writing to urge you to treat the degradation of UK and global soils as the emergency it is.
-
-Scientific evidence increasingly demonstrates that soil degradation threatens food security, biodiversity, water regulation, climate resilience and agricultural productivity.
-
-Healthy soils are fundamental to the resilience of our food production systems. Yet across the UK and globally, intensive cultivation, erosion, compaction and the loss of biological activity have degraded many agricultural soils.
-
-The European Union has recognised this challenge and responded with concrete policy through its soil monitoring and resilience framework.
-
-The UK has acknowledged the importance of soil health through various environmental and agricultural policies. However, there remains no equivalent statutory Soil Health Strategy with clear national targets, comprehensive monitoring and long-term accountability.
-
-I therefore ask:
-
-1. When will a statutory Soil Health Strategy with measurable targets be introduced?
-2. When will soil health be formally recognised as a strategic component of UK food security policy?
-3. When will an independent national soil survey be commissioned?
-4. When will national soil health targets be established?
-5. When will UK policy ambition be aligned with leading international soil restoration programmes?
-6. When will a cross-departmental Soil Emergency Working Group be established?
-7. When will a framework for measuring, independently verifying and publicly reporting progress be introduced?
-
-${personal ? "\nPersonal message:\n" + personal + "\n" : ""}
-
-I look forward to your response.
-
-Yours sincerely,
-
-${name}
-
-${address}`;
-
-            return letter;
-        }
-
-        function copyLetter(){
-            navigator.clipboard.writeText(buildLetter());
-            alert('✅ Letter copied to clipboard!');
-        }
-
-        function openEmailMinisters(){
-            const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
-            const body = encodeURIComponent(buildLetter());
-            
-            // Updated BCC list with comma + space
-            const bcc = "angela.eagle.mp@parliament.uk, emma.hardy.mp@parliament.uk, mary.creagh.mp@parliament.uk, ps.baroness.hayman@defra.gov.uk, victoria@victoriaatkins.org.uk, adrian.ramsay.mp@parliament.uk";
-            
-            window.location.href = `mailto:?bcc=${bcc}&subject=${subject}&body=${body}`;
-        }
-
-        function openEmailLocalMP(){
-            const subject = encodeURIComponent('The UK Soil Emergency — Urgent Action Needed');
-            const body = encodeURIComponent(buildLetter());
-            window.location.href = `mailto:?subject=${subject}&body=${body}`;
-        }
-
-        window.onload = function() {
-            document.getElementById('letterPreview').innerText = buildLetter();
-        };
-    </script>
 </body>
 </html>
